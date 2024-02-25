@@ -5,6 +5,12 @@ VisualStudioVersion = 17.8.34525.116
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DaLatBooking.Web", "DaLatBooking.Web\DaLatBooking.Web.csproj", "{184526C0-507C-480C-8100-08C0BC70B0D1}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DaLatBooking.Domain", "DaLatBooking.Domain\DaLatBooking.Domain.csproj", "{EAFEB606-7B63-4C28-A654-1C92331C300D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DaLatBooking.Infrastructure", "DaLatBooking.Infrastructure\DaLatBooking.Infrastructure.csproj", "{7DEE4B82-F12F-4966-A3A7-01F325BB4F85}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DaLatBooking.Application", "DaLatBooking.Application\DaLatBooking.Application.csproj", "{5A61A418-F672-489E-B94A-D7951EB5CABF}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +21,18 @@ Global
 		{184526C0-507C-480C-8100-08C0BC70B0D1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{184526C0-507C-480C-8100-08C0BC70B0D1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{184526C0-507C-480C-8100-08C0BC70B0D1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EAFEB606-7B63-4C28-A654-1C92331C300D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EAFEB606-7B63-4C28-A654-1C92331C300D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EAFEB606-7B63-4C28-A654-1C92331C300D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EAFEB606-7B63-4C28-A654-1C92331C300D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7DEE4B82-F12F-4966-A3A7-01F325BB4F85}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7DEE4B82-F12F-4966-A3A7-01F325BB4F85}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7DEE4B82-F12F-4966-A3A7-01F325BB4F85}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7DEE4B82-F12F-4966-A3A7-01F325BB4F85}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5A61A418-F672-489E-B94A-D7951EB5CABF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5A61A418-F672-489E-B94A-D7951EB5CABF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5A61A418-F672-489E-B94A-D7951EB5CABF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5A61A418-F672-489E-B94A-D7951EB5CABF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -1,21 +1,41 @@
-using DaLatBooking.Web.Models;
+using DaLatBooking.Application.Common.Interfaces;
+using DaLatBooking.Application.Common.Utility;
+using DaLatBooking.Application.Services.Interface;
+using DaLatBooking.Web.ViewModels;
 using Microsoft.AspNetCore.Mvc;
-using System.Diagnostics;
 
 namespace DaLatBooking.Web.Controllers
 {
     public class HomeController : Controller
     {
-        private readonly ILogger<HomeController> _logger;
-
-        public HomeController(ILogger<HomeController> logger)
+        private readonly IVillaService _villaService;
+        public HomeController(IVillaService villaService, IWebHostEnvironment webHostEnvironment)
         {
-            _logger = logger;
+            this._villaService = villaService;
         }
 
         public IActionResult Index()
         {
-            return View();
+            HomeVM homeVM = new()
+            {
+                VillaList = _villaService.GetAllVillas(),
+                Nights = 1,
+                CheckInDate = DateOnly.FromDateTime(DateTime.Now)
+            };
+            return View(homeVM);
+        }
+
+        [HttpPost]
+        public IActionResult GetVillasByDate(int nights, DateOnly checkInDate)
+        {
+            HomeVM homeVM = new()
+            {
+                CheckInDate = checkInDate,
+                VillaList = _villaService.GetVillasAvailabilityByDate(nights, checkInDate),
+                Nights = nights
+            };
+
+            return PartialView("_VillaList", homeVM);
         }
 
         public IActionResult Privacy()
@@ -23,10 +43,9 @@ namespace DaLatBooking.Web.Controllers
             return View();
         }
 
-        [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
         {
-            return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
+            return View();
         }
     }
 }
